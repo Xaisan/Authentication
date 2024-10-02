@@ -1,0 +1,155 @@
+openapi: 3.0.0
+info:
+  title: Authentication Microservice API
+  version: 1.0.0
+  description: API documentation for the Authentication Microservice
+servers:
+  - url: http://api.example.com/v1
+paths:
+  /register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+                email:
+                  type: string
+      responses:
+        '201':
+          description: User registered successfully
+        '400':
+          description: Invalid input
+  /login:
+    post:
+      summary: Authenticate a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: User authenticated successfully
+        '401':
+          description: Invalid credentials
+  /logout:
+    post:
+      summary: Log out a user
+      responses:
+        '200':
+          description: User logged out successfully
+  /reset-password:
+    post:
+      summary: Reset user password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+      responses:
+        '200':
+          description: Password reset link sent
+        '400':
+          description: Invalid email
+  /update-user:
+    put:
+      summary: Update user information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: User information updated
+        '400':
+          description: Invalid input
+  /delete-user:
+    delete:
+      summary: Delete user account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+      responses:
+        '200':
+          description: User account deleted
+        '400':
+          description: Invalid input
+  /manage-roles:
+    post:
+      summary: Manage user roles/permissions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                roles:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: User roles updated
+        '400':
+          description: Invalid input
+  /manage-sessions:
+    get:
+      summary: Manage user sessions
+      responses:
+        '200':
+          description: User sessions retrieved
+  /manage-tokens:
+    post:
+      summary: Manage user tokens
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                token:
+                  type: string
+      responses:
+        '200':
+          description: User token managed
+        '400':
+          description: Invalid input
