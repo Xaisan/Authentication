@@ -15,13 +15,13 @@ The microservice communicates with the database management microservice directly
 
 ## API Documentation
 
-[Registering a User](docs/register.md)
-[Authenticating a User](docs/authenticate.md)
-[Logging Out a User](docs/logout.md)
-[Resetting a User's Password](docs/reset-password.md)
-[Updating User Information](docs/update.md)
-[Deleting a User Account](docs/delete.md)
-[Managing User Roles/Permissions](docs/roles.md)
-[Managing User Sessions](docs/sessions.md)
-[Managing User Tokens](docs/tokens.md)
+- [Registering a User](docs/register.md)
+- [Authenticating a User](docs/authenticate.md)
+- [Logging Out a User](docs/logout.md)
+- [Resetting a User's Password](docs/reset-password.md)
+- [Updating User Information](docs/update.md)
+- [Deleting a User Account](docs/delete.md)
+- [Managing User Roles/Permissions](docs/roles.md)
+- [Managing User Sessions](docs/sessions.md)
+- [Managing User Tokens](docs/tokens.md)
 
